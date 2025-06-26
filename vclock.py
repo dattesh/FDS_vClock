@@ -3,7 +3,7 @@ from typing import Self
 
 class VectorClock:
  def __init__(self, node_id, all_nodes):
-    Self.node_id = node_id
+    self.node_id = node_id
     self.clock = {nid: 0 for nid in all_nodes}
 
  def increment(self):
