@@ -1,0 +1,34 @@
+version: '3'
+services:
+  node1:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ID=A  
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: python node.py
+
+  node2:
+    build: .
+    ports:
+      - "5001:5000"
+    environment:
+      - NODE_ID=B  
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: python node.py
+
+  node3:
+    build: .
+    ports:
+      - "5002:5000"
+    environment:
+      - NODE_ID=C  
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: python node.py
